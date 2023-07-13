@@ -10,11 +10,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public class MainActivity extends AppCompatActivity {
 
 
     EditText editText ;
-    ImageView imageView;
+    LottieAnimationView imageView;
 
     TextToSpeech textToSpeech;
 
@@ -56,10 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 }else {
 
                     new AlertDialog.Builder(MainActivity.this)
-                            .setIcon(R.drawable.ic_launcher_foreground)
                             .setTitle("Text To speech")
-                            .setMessage("samthing is rong.Plz text anything")
-                            .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            .setMessage("samthing is rong.Plz text anything and try again")
+                            .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                             })
+                            .setCancelable(false)
                             .show();
 
 
